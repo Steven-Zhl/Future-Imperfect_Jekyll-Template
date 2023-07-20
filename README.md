@@ -14,24 +14,24 @@
   * jekyll-paginate 1.1.0
 * simple-jekyll-search 1.10.0
 
-## Design
+## Function
 
 * [x] Organize articles by category (using the `Category` front matter)
 * [x] Search articles (based on [simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
 * [x] Article table of contents (based on [Jekyll-TOC](https://github.com/allejo/jekyll-toc))
 * [x] Article pagination (based on [jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+* [x] Code highlighting (based on [rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
+* [x] Render formulas (based on [MathJax](https://www.mathjax.org)(JavaScript script))
+* [x] Render mermaid charts (based on [jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid) offline JavaScript script ([mermaid.min.js](https://unpkg.com/browse/mermaid@latest/dist/mermaid.min.js)))
 * [ ] Comments
   * [x] Gitalk comments
   * [ ] Disqus comments
-* [ ] Filter articles by category
-* [ ] Filter articles by tag
-* [ ] Article archive (timeline view)
 
 ## Usage
 
 ### (1) Configuration
 
-* `git clone` or `git fork`
+* `git clone`
 * Modify `_config.yml`
   > It is recommended to run `jekyll serve` locally before deployment to check for any issues.
 

@@ -13,24 +13,24 @@
   * jekyll-paginate 1.1.0
 * simple-jekyll-search 1.10.0
 
-## 设计
+## 功能
 
 * [x] 按类别组织文章(利用`Category`元属性)
 * [x] 搜索文章(基于[simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
 * [x] 文章目录(基于[Jekyll-TOC](https://github.com/allejo/jekyll-toc))
 * [x] 文章分页(基于[jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+* [x] 代码高亮(基于[rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
+* [x] 渲染公式(基于[MathJax](https://www.mathjax.org)(JavaScript脚本))
+* [x] 渲染mermaid图表(基于[jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid)的离线JavaScript脚本([mermaid.min.js](https://unpkg.com/browse/mermaid@10.2.4/dist/mermaid.min.js)))
 * [ ] 评论
   * [x] Gitalk评论
   * [ ] Disqus评论
-* [ ] 按类别筛选文章
-* [ ] 按标签筛选文章
-* [ ] 文章归档(时间线视图)
 
 ## 使用
 
 ### (1) 配置
 
-* `git clone`或`git fork`
+* `git clone`
 * 修改`_config.yml`
   > 建议在部署前先在本地运行一下`jekyll serve`，检查是否有问题
 
