@@ -4,7 +4,7 @@
 >
 > 我很喜欢它的风格，但是目前Github上关于它的Jekyll模板并不够实用，所以有了这个repo。
 
-## 环境依赖
+## 构建环境
 
 * Windows 11 22H2 (x64)
 * Ruby 3.2.2
@@ -19,6 +19,8 @@
 * [x] 搜索文章(基于[simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
 * [x] 文章目录(基于[Jekyll-TOC](https://github.com/allejo/jekyll-toc))
 * [x] 文章分页(基于[jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+* [x] 文章归档
+* [x] 文章筛选(按照category或tag属性)
 * [x] 代码高亮(基于[rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
 * [x] 渲染公式(基于[MathJax](https://www.mathjax.org)(JavaScript脚本))
 * [x] 渲染mermaid图表(基于[jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid)的离线JavaScript脚本([mermaid.min.js](https://unpkg.com/browse/mermaid@10.2.4/dist/mermaid.min.js)))
@@ -45,7 +47,7 @@
 
 ## 问题
 
-* 在部分浏览器上，顶栏可能不会固定在顶部，而是出现在页面侧边。(该问题在Microsoft Edge 114.0.1823.67上出现，未确定原因。)
+* 在部分浏览器上，顶栏可能不会固定在顶部，而是出现在页面侧边。(该问题在Microsoft Edge 114.0.1823.67上出现，未确定原因，但与之同期的Chrome则没有该问题。)
 
 ## 来自HTML5 UP的原始README
 

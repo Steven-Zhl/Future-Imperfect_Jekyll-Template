@@ -11,6 +11,7 @@ highlighter: rouge # 代码高亮/Code highlight
 kramdown:
   input: GFM # GFM: Github Flavored Markdown
   syntax_highlighter: rouge # 代码高亮/Code highlight
+timezone: Asia/Shanghai # 时区/Timezone
 
 # 你的社交账号或联系方式，这些信息将会出现在博客的底部，没有的不填即可。
 # Your social account or contact information, which will appear at the bottom of the blog. If not, please leave it blank.

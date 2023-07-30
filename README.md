@@ -5,7 +5,7 @@
 >
 > I really like its style, but the Jekyll templates for it on GitHub aren't practical enough, so I made this repo.
 
-## Environment Dependencies
+## Environment(Build)
 
 * Windows 11 22H2 (x64)
 * Ruby 3.2.2
@@ -20,6 +20,8 @@
 * [x] Search articles (based on [simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
 * [x] Article table of contents (based on [Jekyll-TOC](https://github.com/allejo/jekyll-toc))
 * [x] Article pagination (based on [jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+* [x] Article archive (baesd on JavaScript)
+* [x] Article filtering (by category or tag)
 * [x] Code highlighting (based on [rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
 * [x] Render formulas (based on [MathJax](https://www.mathjax.org)(JavaScript script))
 * [x] Render mermaid charts (based on [jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid) offline JavaScript script ([mermaid.min.js](https://unpkg.com/browse/mermaid@latest/dist/mermaid.min.js)))
@@ -46,7 +48,7 @@
 
 ## Issues
 
-* In some browsers, the top bar may not be fixed to the top, but appear on the side of the page (This issue appears on Microsoft Edge 114.0.1823.67, the cause is unknown).
+* In some browsers, the top bar may not be fixed to the top, but appear on the side of the page (This issue appears on Microsoft Edge 114.0.1823.67, the cause is unknown. But Chrome didn't have that problem).
 
 ## Original README from HTML5 UP
 

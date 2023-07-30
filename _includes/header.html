@@ -10,6 +10,10 @@
                 </a>
             </li>
             <li>
+                <a href="/archive">{% if site.localization=='CN'%}归档{% else if site.localization=='TC' %}歸檔{% else
+                    %}Archive{% endif %}</a>
+            </li>
+            <li>
                 <a href="/about">{% if site.localization=='CN'%}关于{% else if site.localization=='TC' %}關于{% else
                     %}About{% endif %}</a>
             </li>
@@ -21,7 +25,7 @@
             <li class="profile">
                 <a class="image" href="/about">
                     <img src="{{site.baseurl}}/images/avatar.jpg" width="50%"
-                        style="margin-left: 25%;margin-top: 15%;border-radius: 50%;">
+                         style="margin-left: 25%;margin-top: 15%;border-radius: 50%;">
                 </a>
             </li>
             {% if site.simple-jekyll-search.enable %}<!-- 搜索选项 -->
@@ -32,7 +36,7 @@
                 </a>
                 <form id="search">
                     <input type="text" name="query" id="header-search-input" onfocus="onHeaderSearchChange()"
-                        placeholder="{% if site.localization=='CN' or site.localization=='TC' %}搜索{% else %}Search{% endif %}" />
+                           placeholder="{% if site.localization=='CN' or site.localization=='TC' %}搜索{% else %}Search{% endif %}"/>
                 </form>
             </li>
             {% endif %}
