@@ -9,12 +9,13 @@
         </div>
         <div class="meta">
             <time class="published" datetime="{{ post.date }}">{{ post.date | date: "%Y-%m-%d %H:%M" }}</time>
-            {% if post.author != site.username %} <span class="name">{{ post.author }}</span>
-            {% else %}
+            {% if post.author == null or post.author == site.username %}
             <a href="/about" class="author">
                 <span class="name">{{ site.username }}</span>
                 <img src="{{ site.baseurl }}/images/avatar.jpg" alt="avatar"/>
             </a>
+            {% else %}
+            <span class="name">{{ post.author }}</span>
             {% endif %}
         </div>
     </header>
@@ -30,17 +31,14 @@
     <footer>
         <ul class="actions">
             <li>
-                <a href="{{ post.url }}" class="button large">
-                    {% if site.localization=='CN' %}继续阅读
-                    {% else if site.localization=='TC' %}繼續閱讀
-                    {% else %}Continue Reading{% endif %}
-                </a>
+                <a href="{{ post.url }}" class="button large">{{ site.data.locales[site.localization].continue-reading
+                    }}</a>
             </li>
         </ul>
         <ul class="stats">
             <li>
                 <i class="icon solid fa-tag"
-                   title="{% if site.localization=='CN' %}标签{% else if site.localization=='TC' %}標簽{% else %}Tags{% endif %}">
+                   title="{{ site.data.locales[site.localization].tags }}">
                 </i>
             </li>
             <li>
@@ -50,7 +48,7 @@
             </li>
             <li>
                 <i class="icon solid fa-bars"
-                   title="{% if site.localization=='CN' %}类别{% else if site.localization=='TC' %}類別{% else %}Categories{% endif %}">
+                   title="{{ site.data.locales[site.localization].categories }}">
                 </i>
             </li>
             <li>
@@ -70,12 +68,13 @@
         </div>
         <div class="meta">
             <time class="published" datetime="{{ page.date }}">{{ page.date | date: "%Y-%m-%d %H:%M" }}</time>
-            {% if page.author and page.author != site.username %} <span class="name">{{ page.author }}</span>
-            {% else %}
+            {% if page.author == null or page.author == site.username %}
             <a href="/about" class="author">
                 <span class="name">{{ site.username }}</span>
                 <img src="{{ site.baseurl }}/images/avatar.jpg" alt="头像"/>
             </a>
+            {% else %}
+            <span class="name">{{ page.author }}</span>
             {% endif %}
         </div>
     </header>
@@ -88,7 +87,7 @@
         <ul class="stats">
             <li>
                 <i class="icon solid fa-tag"
-                   title="{% if site.localization=='CN' %}标签{% else if site.localization=='TC' %}標簽{% else %}Tags{% endif %}">
+                   title="{{ site.data.locales[site.localization].tags }}">
                 </i>
             </li>
             <li>
@@ -98,7 +97,7 @@
             </li>
             <li>
                 <i class="icon solid fa-bars"
-                   title="{% if site.localization=='CN' %}类别{% else if site.localization=='TC' %}類別{% else %}Categories{% endif %}">
+                   title="{{ site.data.locales[site.localization].categories }}">
                 </i>
             </li>
             <li>

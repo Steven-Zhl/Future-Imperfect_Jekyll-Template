@@ -4,7 +4,7 @@
     <section>
         <form class="search" method="get" action="#search">
             <input type="text" name="query" id="menu-search-input" onfocus="onMenuSearchChange()"
-                   placeholder="{% if site.localization=='CN' or site.localization=='TC' %}搜索{% else %}Search{% endif %}"/>
+                   placeholder="{{ site.data.locales[site.localization].search }}"/>
         </form>
     </section>
     <section id="menu-search-results-section" style="display: none;"><!-- 搜索结果 -->
@@ -18,28 +18,16 @@
     {% endif %}
     {% if site.article_catalogue and {{include.catalog}} %}
     <section class="category">
-        <h3>目录</h3>
+        <h3>{{ site.data.locales[site.localization].catalogue }}</h3>
         {% include toc.html html=content %}
     </section>
     {% endif %}
     <!-- Links -->
     <section>
         <ul class="links">
-             <li>
-                <a href="/">
-                    <h3>{% if site.localization=='CN'%}首页{% else if site.localization=='TC' %}首頁{% else %}Home{% endif %}</h3>
-                </a>
-            </li>
-            <li>
-                <a href="/archive">
-                    <h3>{% if site.localization=='CN'%}归档{% else if site.localization=='TC' %}歸檔{% else %}Archive{% endif %}</h3>
-                </a>
-            </li>
-            <li>
-                <a href="/about">
-                    <h3>{% if site.localization=='CN'%}关于{% else if site.localization=='TC' %}關于{% else %}About{% endif %}</h3>
-                </a>
-            </li>
+            <li><a href="/"><h3>{{ site.data.locales[site.localization].menu }}</h3></a></li>
+            <li><a href="/archive"><h3>{{ site.data.locales[site.localization].archive }}</h3></a></li>
+            <li><a href="/about"><h3>{{ site.data.locales[site.localization].about }}</h3></a></li>
         </ul>
     </section>
 </section>

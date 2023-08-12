@@ -38,15 +38,18 @@
 </script>
 <script>
     const url = window.location.href;
-    const keyword = url.split("?")[1].split("=")[0];
-    const value = url.split("?")[1].split("=")[1];
-    if (keyword === "category") {
-        const categoryElem = document.getElementById("category_selector");
-        categoryElem.value = decodeURI(value);
-        selectChange();
-    } else if (keyword === "tag") {
-        const tagElem = document.getElementById("tag_selector");
-        tagElem.value = decodeURI(value);
-        selectChange();
+    if (url.includes("?")) {
+        const keyword = url.split("?")[1].split("=")[0];
+        const value = url.split("?")[1].split("=")[1];
+        if (keyword === "category") {
+            const categoryElem = document.getElementById("category_selector");
+            categoryElem.value = decodeURI(value);
+            selectChange();
+        } else if (keyword === "tag") {
+            const tagElem = document.getElementById("tag_selector");
+            tagElem.value = decodeURI(value);
+            selectChange();
+        }
     }
+
 </script>

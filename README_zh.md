@@ -15,16 +15,17 @@
 
 ## 功能
 
-* [x] 按类别组织文章(利用`Category`元属性)
-* [x] 搜索文章(基于[simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
-* [x] 文章目录(基于[Jekyll-TOC](https://github.com/allejo/jekyll-toc))
-* [x] 文章分页(基于[jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
-* [x] 文章归档
-* [x] 文章筛选(按照category或tag属性)
-* [x] 代码高亮(基于[rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
-* [x] 渲染公式(基于[MathJax](https://www.mathjax.org)(JavaScript脚本))
-* [x] 渲染mermaid图表(基于[jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid)的离线JavaScript脚本([mermaid.min.js](https://unpkg.com/browse/mermaid@10.2.4/dist/mermaid.min.js)))
-* [ ] 评论
+* 基本功能
+  * [x] 搜索文章(基于[simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
+  * [x] 文章目录(基于[Jekyll-TOC](https://github.com/allejo/jekyll-toc))
+  * [x] 文章分页(基于[jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+  * [x] 文章归档与筛选(按照category或tag)
+* 美化
+  * [x] 代码高亮(基于[rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
+  * [x] 渲染公式(基于[MathJax](https://www.mathjax.org))
+  * [x] 渲染mermaid图表(基于[jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid))
+  * [x] 可定制的header
+* 评论
   * [x] Gitalk评论
   * [ ] Disqus评论
 
@@ -36,8 +37,9 @@
 * 修改`_config.yml`
   > 建议在部署前先在本地运行一下`jekyll serve`，检查是否有问题
 
-### (2) 部署
+### (2) 部署(GitHub Pages)
 
+* 撰写文章(请保存在`_posts`文件夹中)
 * 将整个项目上传到Github，仓库名为`<username>.github.io`
 * 在仓库设置中找到`Pages`，点击。
   1. 在`Source`的选项中选择`Action`
@@ -45,9 +47,44 @@
   3. 随后会请求添加一个`.yml`文件，不用修改直接添加即可
   4. 稍等片刻，Github Pages将会完成部署，之后就可以通过`https://<username>.github.io`访问。
 
+### (3) 关于头信息
+
+> 哪怕你已经十分熟悉Jekyll了，也建议你再看看这一部分，这部分根据Future-Imperfect的样式做了一些改动
+
+* 本项目中，一个典型的头信息如下所示：
+  ```yaml
+  ---
+  layout: post
+  title: "Test"
+  subtitle: "This is a test article"
+  author: "Your name"
+  date: 2023-07-05 10:00:00 +0800
+  cover: "/images/test_cover.jpg"
+  stick: true
+  tag:
+    - test
+    - article
+  category: test
+  ---
+  ```
+* `layout`：布局样式，请填**post**，表示让这篇文章应用“post”布局。
+* `title`：标题，不能留空
+* `subtitle`：副标题，可以留空或直接删除(允许不存在subtitle这一字段)。
+* `author`：作者，留空或直接删除时，显示`_config.yml`中的`username`字段；若存在且与`username`不同，则使用所填的内容。
+* `date`：发布日期，请按照示例的格式来写，最后的`+0800`表示时区为GMT+8(北京时间)
+* `cover`：封面，留空或直接删除时会使用默认封面[/images/default_cover.jpg](./images/default_cover.jpg)
+* `stick`：是否固定到首页左侧，留空或删除等同于false，不建议stick的文章过多。
+* `tag`：标签，用于筛选文章，允许多个tag。
+* `category`：类别，用于筛选文章，不建议多个category，在设计之初就是按照单个category设计的。
+
 ## 问题
 
-* 在部分浏览器上，顶栏可能不会固定在顶部，而是出现在页面侧边。(该问题在Microsoft Edge 114.0.1823.67上出现，未确定原因，但与之同期的Chrome则没有该问题。)
+* ~~部分情况下，顶栏可能不会固定在顶部而是出现在页面侧边，导致整个页面的样式出现问题~~
+  > 已解决，详见[注意事项](#注意事项)第1项
+
+## 注意事项
+
+1. 在使用AdGuard或同类浏览器插件时，不要启用**Web Annoyances Ultralist**(`过滤器 > 扰人的 > Web Annoyances Ultralist`)，该规则会使部分样式被浏览器默认样式覆盖，导致页面样式异常。
 
 ## 来自HTML5 UP的原始README
 
