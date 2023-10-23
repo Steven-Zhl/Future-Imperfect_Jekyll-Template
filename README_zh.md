@@ -19,7 +19,8 @@
   * [x] 搜索文章(基于[simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
   * [x] 文章目录(基于[Jekyll-TOC](https://github.com/allejo/jekyll-toc))
   * [x] 文章分页(基于[jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
-  * [x] 文章归档与筛选(按照category或tag)
+  * [x] 文章归档与筛选(按照category或tags)
+  * [x] 提供RSS订阅(基于[jekyll-feed](https://github.com/jekyll/jekyll-feed))
 * 美化
   * [x] 代码高亮(基于[rouge](https://rubygems.org/gems/rouge/versions/4.1.2))
   * [x] 渲染公式(基于[MathJax](https://www.mathjax.org))
@@ -56,12 +57,12 @@
   ---
   layout: post
   title: "Test"
-  subtitle: "This is a test article"
+  description: "This is a test article"
   author: "Your name"
   date: 2023-07-05 10:00:00 +0800
-  cover: "/images/test_cover.jpg"
+  image: "/images/test_cover.jpg"
   stick: true
-  tag:
+  tags:
     - test
     - article
   category: test
@@ -69,12 +70,12 @@
   ```
 * `layout`：布局样式，请填**post**，表示让这篇文章应用“post”布局。
 * `title`：标题，不能留空
-* `subtitle`：副标题，可以留空或直接删除(允许不存在subtitle这一字段)。
+* `description`：本篇文章描述，可以留空或直接删除(允许不存在`description`这一字段)。
 * `author`：作者，留空或直接删除时，显示`_config.yml`中的`username`字段；若存在且与`username`不同，则使用所填的内容。
 * `date`：发布日期，请按照示例的格式来写，最后的`+0800`表示时区为GMT+8(北京时间)
-* `cover`：封面，留空或直接删除时会使用默认封面[/images/default_cover.jpg](./images/default_cover.jpg)
+* `image`：文章封面，留空或直接删除时会使用默认封面[/images/default_cover.jpg](./images/default_cover.jpg)
 * `stick`：是否固定到首页左侧，留空或删除等同于false，不建议stick的文章过多。
-* `tag`：标签，用于筛选文章，允许多个tag。
+* `tags`：标签，用于筛选文章，允许多个tag。
 * `category`：类别，用于筛选文章，不建议多个category，在设计之初就是按照单个category设计的。
 
 ## 问题

@@ -24,10 +24,11 @@
 ## Features
 
 * Basic Features
-  * [x] Article search (based on simple-jekyll-search)
-  * [x] Article table of contents (based on Jekyll-TOC)
-  * [x] Article pagination (based on jekyll-paginate)
-  * [x] Article archiving and filtering (by category or tag)
+  * [x] Article search (based on [simple-jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search))
+  * [x] Article table of contents (based on [Jekyll-TOC](https://github.com/allejo/jekyll-toc))
+  * [x] Article pagination (based on [jekyll-paginate](https://rubygems.org/gems/jekyll-paginate/versions/1.1.0))
+  * [x] Article archiving and filtering (by category or tags)
+  * [x] RSS subscription (based on [jekyll-feed](https://github.com/jekyll/jekyll-feed))
 * Styling
   * [x] Code highlighting (based on rouge)
   * [x] Formula rendering (based on MathJax)
@@ -56,22 +57,22 @@
   4. Wait a moment, and Github Pages will complete the deployment, after which you can access it
      via `https://<username>.github.io`.
 
-### (3) About Front Matter
+### (3) About Post's YAML Front Matter
 
 > Even if you are already familiar with Jekyll, it is recommended to review this section. Some modifications have been
-> made to this section based on the style of Future-Imperfect.
+> made to this part based on the style of Future-Imperfect.
 
 * In this project, a typical **Front Matter** is shown below:
   ```yaml
   ---
   layout: post
   title: "Test"
-  subtitle: "This is a test article"
+  description: "This is a test article"
   author: "Your name"
   date: 2023-07-05 10:00:00 +0800
-  cover: "/images/test_cover.jpg"
+  image: "/images/test_cover.jpg"
   stick: true
-  tag:
+  tags:
     - test
     - article
   category: test
@@ -79,16 +80,16 @@
   ```
 * `layout`: Layout style, please fill in **post** to indicate that this article should use the "post" layout.
 * `title`: Title, must not be left blank.
-* `subtitle`: Subtitle, can be left blank or deleted directly (the absence of the `subtitle` field is allowed).
+* `description`: Description, can be left blank or deleted directly (the absence of the `description` field is allowed).
 * `author`: Author, when left blank or deleted, it will display the `username` field in `_config.yml`; if provided and
   different from `username`, it will use the content you provide.
 * `date`: Publication date, please follow the format in the example. The `+0800` at the end indicates the GMT+8 time
   zone (Beijing time).
-* `cover`: Cover image, when left blank or deleted, the default cover
+* `image`: Cover image of the article, when left blank or deleted, the default cover
   image [/images/default_cover.jpg](./images/default_cover.jpg) will be used.
 * `stick`: Whether to pin it to the left side of the homepage. Leaving it blank or deleting it is equivalent to `false`.
   It is not recommended to have too many articles pinned.
-* `tag`: Tags, used for filtering articles, multiple tags are allowed.
+* `tags`: Tags, used for filtering articles, multiple tags are allowed.
 * `category`: Category, used for filtering articles. It is not recommended to use multiple categories, as the design is
   based on a single category from the beginning.
 
