@@ -2,15 +2,32 @@
 
 > 一个基于[Future Imperfect](https://html5up.net/future-imperfect)制作的Jekyll模板.
 >
-> 我很喜欢它的风格，但是目前Github上关于它的Jekyll模板并不够实用，所以有了这个repo。
+> 我很喜欢它的风格，但是目前GitHub上关于它的Jekyll模板并不够好用，所以有了这个repo。
 
 ## 构建环境
 
-* Windows 11 22H2 (x64)
-* Ruby 3.2.2
+* Windows 11 22H2 (x64) / Ubuntu 23.10 (x64)
+* Ruby 3.2.2 (Windows) / Ruby 3.1.2p20 (Ubuntu)
+
 * Jekyll 4.3.2
-  * jekyll-feed 0.12
+  * addressable 2.8.1
+  * concurrent-ruby 1.1.6
+  * em-websocket 0.5.1
+  * http_parser.rb 0.6.0
+  * i18n 1.10.0
+  * jekyll-feed 0.17.0
   * jekyll-paginate 1.1.0
+  * jekyll-sass-converter 2.2.0
+  * jekyll-seo-tag 2.8.0
+  * listen 3.7.0
+  * minima 2.5.1
+  * pathutil 0.16.1
+  * public_suffix 4.0.6
+  * rouge 4.1.2
+  * sassc 2.4.0
+  * unicode-display_width 1.6.1
+  * webrick 1.8.1
+
 * simple-jekyll-search 1.10.0
 
 ## 功能
@@ -34,8 +51,22 @@
 
 ### (1) 配置
 
-* `git clone`
-* 修改`_config.yml`
+1. 通过`git clone`或通过下载压缩包保存到本地
+2. 通过`gem`安装Jekyll及其依赖
+
+    ```bash
+    apt install ruby ruby-dev gem -y # Ubuntu，其他发行版请自行安装
+    gem install bundler jekyll # 安装Jekyll及基本组件
+
+    # 安装其他Jekyll插件
+    ## 1. 通过下面这条指令安装最新版的插件：这可能会与Gemfile和Gemfile.lock中指定的版本冲突，此时请直接删除这两个文件
+    gem install addressable concurrent-ruby em-websocket http_parser.rb i18n, jekyll-feed, jekyll-paginate jekyll-sass-converter jekyll-seo-tag listen minima pathutil, public_suffix rouge sassc unicode-display_width webrick
+    ## 2. 通过下面这条指令安装指定版本的插件：这样不会与Gemfile和Gemfile.lock中指定的版本冲突，但我个人觉得，新版本通常总不会比旧版本差，所以我还是更推荐上一种方法
+    gem install addressable:2.8.1, concurrent-ruby:1.1.6, em-websocket:0.5.1, http_parser.rb:0.6.0, i18n:1.10.0, jekyll-feed:0.17.0, jekyll-paginate:1.1.0, jekyll-sass-converter:2.2.0, jekyll-seo-tag:2.8.0, listen:3.7.0, minima:2.5.1, pathutil:0.16.1, public_suffix:4.0.6, rouge:4.1.2, sassc:2.4.0, unicode-display_width:1.6.1, webrick:1.8.1
+    ```
+
+3. 修改`_config.yml`，使之符合你的需求
+
   > 建议在部署前先在本地运行一下`jekyll serve`，检查是否有问题
 
 ### (2) 部署(GitHub Pages)
@@ -50,24 +81,26 @@
 
 ### (3) 关于头信息
 
-> 哪怕你已经十分熟悉Jekyll了，也建议你再看看这一部分，这部分根据Future-Imperfect的样式做了一些改动
+> 哪怕你已经十分熟悉Jekyll了，也建议你看看这一部分，本项目的头信息根据Future-Imperfect和Jekyll-Feed的要求有所改动，可能与通常的Jekyll模板的习惯有所不同。
 
 * 本项目中，一个典型的头信息如下所示：
-  ```yaml
-  ---
-  layout: post
-  title: "Test"
-  description: "This is a test article"
-  author: "Your name"
-  date: 2023-07-05 10:00:00 +0800
-  image: "/images/test_cover.jpg"
-  stick: true
-  tags:
-    - test
-    - article
-  category: test
-  ---
-  ```
+
+    ```yaml
+    ---
+    layout: post
+    title: "Test"
+    description: "This is a test article"
+    author: "Your name"
+    date: 2023-07-05 10:00:00 +0800
+    image: "/images/test_cover.jpg"
+    stick: true
+    tags:
+      - test
+      - article
+    category: test
+    ---
+    ```
+
 * `layout`：布局样式，请填**post**，表示让这篇文章应用“post”布局。
 * `title`：标题，不能留空
 * `description`：本篇文章描述，可以留空或直接删除(允许不存在`description`这一字段)。

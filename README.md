@@ -14,11 +14,28 @@
 
 ## Environment(Build)
 
-* Windows 11 22H2 (x64)
-* Ruby 3.2.2
+* Windows 11 22H2 (x64) / Ubuntu 23.10 (x64)
+* Ruby 3.2.2 (Windows) / Ruby 3.1.2p20 (Ubuntu)
+
 * Jekyll 4.3.2
-  * jekyll-feed 0.12
+  * addressable 2.8.1
+  * concurrent-ruby 1.1.6
+  * em-websocket 0.5.1
+  * http_parser.rb 0.6.0
+  * i18n 1.10.0
+  * jekyll-feed 0.17.0
   * jekyll-paginate 1.1.0
+  * jekyll-sass-converter 2.2.0
+  * jekyll-seo-tag 2.8.0
+  * listen 3.7.0
+  * minima 2.5.1
+  * pathutil 0.16.1
+  * public_suffix 4.0.6
+  * rouge 4.1.2
+  * sassc 2.4.0
+  * unicode-display_width 1.6.1
+  * webrick 1.8.1
+
 * simple-jekyll-search 1.10.0
 
 ## Features
@@ -42,9 +59,23 @@
 
 ### (1) Configuration
 
-* `git clone`
-* Modify `_config.yml`
-  > It is recommended to run `jekyll serve` locally before deployment to check for any issues.
+* Save it locally by `git clone` or downloading the zip file.
+* Install Jekyll and its dependencies via `gem`
+
+  ```bash
+  apt install ruby ruby-dev gem -y # Ubuntu, other linux distributions please install manually
+  gem install bundler jekyll # Install Jekyll and its basic components.
+
+  # Install dependencies
+  ## 1. Install the latest version of the dependencies by the following command: This may conflict with the versions specified in Gemfile and Gemfile.lock. Please delete these two files directly at this time.
+  gem install addressable concurrent-ruby em-websocket http_parser.rb i18n, jekyll-feed, jekyll-paginate jekyll-sass-converter jekyll-seo-tag listen minima pathutil, public_suffix rouge sassc unicode-display_width webrick
+  ## 2. Install the dependencies specified in Gemfile and Gemfile.lock by the following command: This will not conflict with the versions specified in Gemfile and Gemfile.lock. But personally, I think that the new version is usually not worse than the old version, so I still recommend the previous method.
+  gem install addressable:2.8.1, concurrent-ruby:1.1.6, em-websocket:0.5.1, http_parser.rb:0.6.0, i18n:1.10.0, jekyll-feed:0.17.0, jekyll-paginate:1.1.0, jekyll-sass-converter:2.2.0, jekyll-seo-tag:2.8.0, listen:3.7.0, minima:2.5.1, pathutil:0.16.1, public_suffix:4.0.6, rouge:4.1.2, sassc:2.4.0, unicode-display_width:1.6.1, webrick:1.8.1
+  ```
+
+* Modify `_config.yml`, make it meet your needs.
+
+    > It is recommended to run `jekyll serve` locally before deployment to check for any issues.
 
 ### (2) Deployment(GitHub Pages)
 
@@ -59,10 +90,10 @@
 
 ### (3) About Post's YAML Front Matter
 
-> Even if you are already familiar with Jekyll, it is recommended to review this section. Some modifications have been
-> made to this part based on the style of Future-Imperfect.
+> Even if you are already familiar with Jekyll, it is recommended to review this section. Some modifications have been made to this part based on the requirements of Future-Imperfect and Jekyll-Feed, which may be different from the usual Jekyll templates.
 
 * In this project, a typical **Front Matter** is shown below:
+
   ```yaml
   ---
   layout: post
@@ -78,6 +109,7 @@
   category: test
   ---
   ```
+
 * `layout`: Layout style, please fill in **post** to indicate that this article should use the "post" layout.
 * `title`: Title, must not be left blank.
 * `description`: Description, can be left blank or deleted directly (the absence of the `description` field is allowed).
