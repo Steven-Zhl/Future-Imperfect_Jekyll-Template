@@ -50,6 +50,7 @@ localization: zh-Hans # 本地化显示，可选项：en(英文), zh-Hans(简体
 # The style of the article introduction, if you like to write a "blockquote" as a quotation before each article (> XXX), it is recommended to use this style, otherwise it is recommended to use '"post.content | strip_html | truncatewords: 50"'
 article_introduction_format: post.excerpt
 article_catalogue: true # 是否在侧边菜单展示文章目录/Whether to display the article catalogue in the sidebar menu
+default_cover_path: /images/default_cover.jpg # 默认封面图路径/Default cover path
 
 # 顶栏样式配置/Header style settings
 header:

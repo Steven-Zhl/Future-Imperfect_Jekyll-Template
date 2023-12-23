@@ -4,7 +4,7 @@
 >
 > I really like its style, but the Jekyll templates for it on GitHub aren't practical enough, so I made this repo.
 
-[![中文文档](https://img.shields.io/badge/README-中文文档-blue)](./README_zh.md)
+[![中文文档](https://img.shields.io/badge/README__zh-中文文档-blue)](./README_zh.md)
 [![预览](https://img.shields.io/badge/Deployment-Steven's_Blog-yellow)](https://steven-zhl.github.io)
 
 ![语言](https://img.shields.io/github/languages/top/Steven-Zhl/Future-Imperfect_Jekyll-Template.svg)
@@ -59,23 +59,20 @@
 
 ### (1) Configuration
 
-* Save it locally by `git clone` or downloading the zip file.
-* Install Jekyll and its dependencies via `gem`
+1. Save it locally by `git clone` or downloading the zip file.
+2. Install Jekyll and its dependencies via `gem`
 
   ```bash
   apt install ruby ruby-dev gem -y # Ubuntu, other linux distributions please install manually
   gem install bundler jekyll # Install Jekyll and its basic components.
 
   # Install dependencies
-  ## 1. Install the latest version of the dependencies by the following command: This may conflict with the versions specified in Gemfile and Gemfile.lock. Please delete these two files directly at this time.
-  gem install addressable concurrent-ruby em-websocket http_parser.rb i18n, jekyll-feed, jekyll-paginate jekyll-sass-converter jekyll-seo-tag listen minima pathutil, public_suffix rouge sassc unicode-display_width webrick
-  ## 2. Install the dependencies specified in Gemfile and Gemfile.lock by the following command: This will not conflict with the versions specified in Gemfile and Gemfile.lock. But personally, I think that the new version is usually not worse than the old version, so I still recommend the previous method.
-  gem install addressable:2.8.1, concurrent-ruby:1.1.6, em-websocket:0.5.1, http_parser.rb:0.6.0, i18n:1.10.0, jekyll-feed:0.17.0, jekyll-paginate:1.1.0, jekyll-sass-converter:2.2.0, jekyll-seo-tag:2.8.0, listen:3.7.0, minima:2.5.1, pathutil:0.16.1, public_suffix:4.0.6, rouge:4.1.2, sassc:2.4.0, unicode-display_width:1.6.1, webrick:1.8.1
+  bundle install
   ```
 
-* Modify `_config.yml`, make it meet your needs.
+3. Modify `_config.yml`, make it meet your needs.
 
-    > It is recommended to run `jekyll serve` locally before deployment to check for any issues.
+> It is recommended to run `jekyll serve` locally before deployment to check for any issues.
 
 ### (2) Deployment(GitHub Pages)
 
@@ -127,15 +124,21 @@
 
 ## Issues
 
-* ~~In some cases, the top bar may not stick to the top of the page and instead appear on the side of the page, causing
-  issues with the overall page layout~~
+* ~~In some cases, the top bar may not stick to the top of the page and instead appear on the side of the page, causing issues with the overall page layout~~
   > This issue has been resolved, refer to [Notes](#notes) item 1 for details.
+* The tags in the "Statistics" section of the page do not sort as expected, either by "Latest" or "Most", perhaps due to a Liquid syntax issue that cannot be resolved at this time.
 
 ## Notes
 
 1. When using AdGuard or similar browser extensions, do not enable **Web Annoyances Ultralist** (`Filters > Annoyances > Web Annoyances Ultralist`). This rule can cause certain styles to be overridden by the browser's default styles, leading to abnormal page styling.
+2. Optimizable details:
+   * Currently, the image resources are all in `jpg` format, but `jpg` is not the best solution for web -- it has good compatibility, but low compression ratio. You may consider using `webp` instead of `jpg`, which is a newer format with better compression ratio.
+     * For articles without a specified cover path, the default cover will be used. You can specify specify the path by modify the `default_cover_path` in the `config.yml`.
+   * At current [main.css](./assets/css/main.css), the `Source Sans Pro` font is loaded via Google Fonts' CDN, but Google's CDN is usually unstable in China. If you deploying it in China, you may consider using other CDNs or downloading font file to your local machine for use.
 
 ## Original README from HTML5 UP
+
+> The origin project is open source under the [CCA 3.0 license (Creative Cloud Attribution)](https://creativecommons.org/licenses/by/3.0/)
 
     Future Imperfect by HTML5 UP
     html5up.net | @ajlkn

@@ -59,15 +59,12 @@
     gem install bundler jekyll # 安装Jekyll及基本组件
 
     # 安装其他Jekyll插件
-    ## 1. 通过下面这条指令安装最新版的插件：这可能会与Gemfile和Gemfile.lock中指定的版本冲突，此时请直接删除这两个文件
-    gem install addressable concurrent-ruby em-websocket http_parser.rb i18n, jekyll-feed, jekyll-paginate jekyll-sass-converter jekyll-seo-tag listen minima pathutil, public_suffix rouge sassc unicode-display_width webrick
-    ## 2. 通过下面这条指令安装指定版本的插件：这样不会与Gemfile和Gemfile.lock中指定的版本冲突，但我个人觉得，新版本通常总不会比旧版本差，所以我还是更推荐上一种方法
-    gem install addressable:2.8.1, concurrent-ruby:1.1.6, em-websocket:0.5.1, http_parser.rb:0.6.0, i18n:1.10.0, jekyll-feed:0.17.0, jekyll-paginate:1.1.0, jekyll-sass-converter:2.2.0, jekyll-seo-tag:2.8.0, listen:3.7.0, minima:2.5.1, pathutil:0.16.1, public_suffix:4.0.6, rouge:4.1.2, sassc:2.4.0, unicode-display_width:1.6.1, webrick:1.8.1
+    bundle install
     ```
 
 3. 修改`_config.yml`，使之符合你的需求
 
-  > 建议在部署前先在本地运行一下`jekyll serve`，检查是否有问题
+> 建议在部署前先在本地运行一下`jekyll serve`，检查是否有问题
 
 ### (2) 部署(GitHub Pages)
 
@@ -115,12 +112,20 @@
 
 * ~~部分情况下，顶栏可能不会固定在顶部而是出现在页面侧边，导致整个页面的样式出现问题~~
   > 已解决，详见[注意事项](#注意事项)第1项
+* 页面中“统计信息”部分的标签未能按照预想的效果，分别按照“最新”和“最多”排序，也许是Liquid语法的问题，暂时无法解决。
 
 ## 注意事项
 
-1. 在使用AdGuard或同类浏览器插件时，不要启用**Web Annoyances Ultralist**(`过滤器 > 扰人的 > Web Annoyances Ultralist`)，该规则会使部分样式被浏览器默认样式覆盖，导致页面样式异常。
+1. 在使用AdGuard或同类浏览器插件时，不要启用**Web Annoyances Ultralist**(`过滤器 > 扰人的 > Web Annoyances Ultralist`)
+   规则集，该规则会使部分样式被浏览器默认样式覆盖，导致页面样式异常。
+2. 可优化的细节：
+   * 目前图片资源都是`jpg`格式，但对网页来说`jpg`并不是最优解——它的兼容性很好，但压缩率不高，鉴于当前的主流浏览器都已支持压缩率更高的`webp`格式的图片，您可以考虑使用`webp`代替`jpg`，以提高加载速度，同时节省流量。
+       * 对于未指定封面路径的文章，会使用默认封面。您可以通过修改`_config.yml`的`default_cover_path`值来修改默认封面的路径。
+   * 在目前的[main.css](./assets/css/main.css)中，`Source Sans Pro`字体使用Google Fonts的cdn加载，但通常来说谷歌的cdn在国内并不稳定。若您将该模板用于国内网站，您可以考虑换用其他cdn或直接下载到本地导入使用。
 
 ## 来自HTML5 UP的原始README
+
+> 原始项目基于[CCA 3.0 license (Creative Cloud Attribution)](https://creativecommons.org/licenses/by/3.0/)开源。
 
     Future Imperfect by HTML5 UP
     html5up.net | @ajlkn
