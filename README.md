@@ -18,24 +18,39 @@
 * Ruby 3.2.2 (Windows) / Ruby 3.1.2p20 (Ubuntu)
 
 * Jekyll 4.3.2
-  * addressable 2.8.1
-  * concurrent-ruby 1.1.6
-  * em-websocket 0.5.1
-  * http_parser.rb 0.6.0
-  * i18n 1.10.0
+  * addressable 2.8.6
+  * concurrent-ruby 1.2.2
+  * em-websocket 0.5.3
+  * ffi 1.16.3-x64-mingw-ucrt
+  * google-protobuf 3.25.1-x64-mingw-ucrt
+  * http_parser.rb 0.8.0
+  * i18n 1.14.1
   * jekyll-feed 0.17.0
   * jekyll-paginate 1.1.0
-  * jekyll-sass-converter 2.2.0
+  * jekyll-sass-converter 3.0.0
+    * sass-embedded ~> 1.54
   * jekyll-seo-tag 2.8.0
-  * listen 3.7.0
+  * listen 3.8.0
+    * rb-fsevent ~> 0.10, >= 0.10.3
   * minima 2.5.1
-  * pathutil 0.16.1
-  * public_suffix 4.0.6
-  * rouge 4.1.2
-  * sassc 2.4.0
+  * pathutil 0.16.2
+    * forwardable-extended ~> 2.6
+  * public_suffix 5.0.4
+  * rb-fsevent 0.11.2
+  * rexml 3.2.6
+  * rouge 4.2.0
+  * sass-embedded 1.69.5-x64-mingw-ucrt
+    * google-protobuf ~> 3.23
   * unicode-display_width 1.6.1
   * webrick 1.8.1
-
+  * tzinfo 2.0.6
+    * concurrent-ruby ~> 1.0
+  * tzinfo-data 1.2023.3
+    * tzinfo >= 1.0.0
+  * unicode-display_width 2.5.0
+  * wdm (0.1.1)
+* Bundle 2.5.1
+* Gem 3.5.1
 * simple-jekyll-search 1.10.0
 
 ## Features
