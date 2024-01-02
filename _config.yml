@@ -1,6 +1,6 @@
 # 基本配置/Basic settings
 title: Website Title # 博客网站标题/Title of the blog
-intro: >- # 关于博客的简介/Introduction of the blog
+description: >- # 关于博客的简介/Introduction of the blog
   (This is the template of the intro. You can change it in the _config.yml file.)This is my blog. I will share some of my thoughts and experiences here.
 blurb: >- # 关于你的简介/Introduction of yourself
   (This is the template of the blurb. You can change it in the _config.yml file.)Hi there. I'm Steven.
@@ -53,7 +53,6 @@ article_catalogue: true # 是否在侧边菜单展示文章目录/Whether to dis
 default_cover_path: /images/default_cover.jpg # 默认封面图路径/Default cover path
 icp_record: # ICP备案号/ICP record number (China mainland need only)
 
-
 # 顶栏样式配置/Header style settings
 header:
   menu: true # 是否在顶栏显示“菜单”/Whether to display "menu" in the header.
@@ -79,8 +78,10 @@ mathjax: # MathJax(数学公式)
   enable: true # 是否允许渲染数学公式/Whether to enable render formula
 jekyll-mermaid: # Jekyll Mermaid(绘图功能)
   enable: true # 是否启用绘图功能/Whether to enable drawing function
-feed: # Jekyll-Feed(RSS订阅功能)
+feed:
   posts_limit: 10 # RSS订阅的文章数量上限/Number of articles for RSS subscription
   tags:
     except:
       - test
+  # Jekyll-Feed(RSS订阅功能)，如果不想使用RSS功能，请删除本段以及plugins、Gemfile和Gemfile.lock中的`jekyll-feed`
+  # Jekyll-Feed(RSS subscription function), if you don't want to use RSS function, please delete this section and `jekyll-feed` in plugins, Gemfile and Gemfile.lock

@@ -6,6 +6,11 @@
     <link rel="icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
 
+    {% if site.feed %}
+    <!-- RSS -->
+    {% feed_meta %}
+    {% endif %}
+
     {% if site.gitalk.enable and page.title %}
     <!-- Gitalk -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
