@@ -14,7 +14,7 @@
     {% if site.gitalk.enable and page.title %}
     <!-- Gitalk -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     {% endif %}
 
     {% if site.mathjax.enable and page.title %}
@@ -32,13 +32,13 @@
             overflow-x: auto;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
         type="text/javascript">
         </script>
     {% endif %}
 
     {% if site.jekyll-mermaid.enable and page.title %}
     <!-- Mermaid -->
-    <script src="{{site.baseurl}}/assets/js/mermaid.min.js"></script>
+    <script async src="{{site.baseurl}}/assets/js/mermaid.min.js"></script>
     {% endif %}
 </head>
