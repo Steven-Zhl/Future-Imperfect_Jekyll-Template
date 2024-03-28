@@ -119,23 +119,24 @@
     - test
     - article
   category: test
+  mathjax: true
+  mermaid: false
   ---
   ```
 
-* `layout`: Layout style, please fill in **post** to indicate that this article should use the "post" layout.
-* `title`: Title, must not be left blank.
-* `description`: Description, can be left blank or deleted directly (the absence of the `description` field is allowed).
-* `author`: Author, when left blank or deleted, it will display the `username` field in `_config.yml`; if provided and
-  different from `username`, it will use the content you provide.
-* `date`: Publication date, please follow the format in the example. The `+0800` at the end indicates the GMT+8 time
-  zone (Beijing time).
-* `image`: Cover image of the article, when left blank or deleted, the default cover
-  image [/images/default_cover.jpg](./images/default_cover.jpg) will be used.
-* `stick`: Whether to pin it to the left side of the homepage. Leaving it blank or deleting it is equivalent to `false`.
-  It is not recommended to have too many articles pinned.
-* `tags`: Tags, used for filtering articles, multiple tags are allowed.
-* `category`: Category, used for filtering articles. It is not recommended to use multiple categories, as the design is
-  based on a single category from the beginning.
+> The following is an explanation of each field, fields marked as [optional] can be left blank or deleted directly (the absence of this field is allowed).
+
+* `layout`: [Required]Layout style, please fill in **post** to indicate that this article should use the "post" layout.
+* `title`: [Required]Title of this article.
+* `description`: [Optional]Description of this article.
+* `author`: [Optional]Author, when left blank or deleted, it will display the `username` field in `_config.yml`; if provided and different from `username`, it will use the content you provide.
+* `date`: [Required]Publication date, please follow the format in the example. The `+0800` at the end indicates the GMT+8 time zone (Beijing time).
+* `image`: [Optional]Cover image of the article, when left blank or deleted, the default cover image [/images/default_cover.jpg](./images/default_cover.jpg) will be used.
+* `stick`: [Optional]Whether to pin it to the left side of the homepage. Leaving it blank or deleting it is equivalent to `false`. It is not recommended to have too many articles pinned.
+* `tags`: [Optional]Tags, used for filtering articles, multiple tags are allowed.
+* `category`: [Optional]Category, used for filtering articles. It can only be one category.
+* `mathjax`: [Optional]Whether to enable MathJax rendering. If not configured, it will follow the global configuration (`mathjax.enable`) in `_config.yml`.
+* `mermaid`: [Optional]Whether to enable rendering of mermaid charts. If not configured, it will follow the global configuration (`jekyll-mermaid.enable`) in `_config.yml`.
 
 ## Issues
 

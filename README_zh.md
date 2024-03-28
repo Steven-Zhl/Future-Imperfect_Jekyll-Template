@@ -115,18 +115,24 @@
       - test
       - article
     category: test
+    mathjax: true
+    mermaid: false
     ---
     ```
 
-* `layout`：布局样式，请填**post**，表示让这篇文章应用“post”布局。
-* `title`：标题，不能留空
-* `description`：本篇文章描述，可以留空或直接删除(允许不存在`description`这一字段)。
-* `author`：作者，留空或直接删除时，显示`_config.yml`中的`username`字段；若存在且与`username`不同，则使用所填的内容。
-* `date`：发布日期，请按照示例的格式来写，最后的`+0800`表示时区为GMT+8(北京时间)
-* `image`：文章封面，留空或直接删除时会使用默认封面[/images/default_cover.jpg](./images/default_cover.jpg)
-* `stick`：是否固定到首页左侧，留空或删除等同于false，不建议stick的文章过多。
-* `tags`：标签，用于筛选文章，允许多个tag。
-* `category`：类别，用于筛选文章，不建议多个category，在设计之初就是按照单个category设计的。
+> 以下是各字段的说明，标记为[选填]的字段可以留空或直接删除(允许不存在这一字段)
+
+* `layout`：[必填]布局样式，请填**post**，表示让这篇文章应用“post”布局。
+* `title`：[必填]本篇文章的标题。
+* `description`：[选填]本篇文章的描述。
+* `author`：[选填]作者，留空或直接删除时，显示`_config.yml`中的`username`字段；若存在且与`username`不同，则使用所填的内容。
+* `date`：[必填]发布日期，请按照示例的格式来写，最后的`+0800`表示时区为GMT+8(北京时间)
+* `image`：[选填]文章封面，留空或直接删除时会使用默认封面[/images/default_cover.jpg](./images/default_cover.jpg)
+* `stick`：[选填]是否固定到首页左侧，留空或删除等同于false，不建议stick的文章过多。
+* `tags`：[选填]标签，用于筛选文章，允许多个tag。
+* `category`：[选填]类别，用于筛选文章，仅允许一个category。
+* `mathjax`：[选填]是否启用MathJax渲染公式，未配置则遵循`_config.yml`中的全局配置(`mathjax.enable`)。
+* `mermaid`：[选填]是否启用Mermaid渲染图表，未配置则遵循`_config.yml`中的全局配置(`jekyll-mermaid.enable`)。
 
 ## 问题
 

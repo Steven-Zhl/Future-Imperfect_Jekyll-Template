@@ -3,7 +3,7 @@ title: Website Title # 博客网站标题/Title of the blog
 description: >- # 关于博客的简介/Introduction of the blog
   (This is the template of the intro. You can change it in the _config.yml file.)This is my blog. I will share some of my thoughts and experiences here.
 blurb: >- # 关于你的简介/Introduction of yourself
-  (This is the template of the blurb. You can change it in the _config.yml file.)Hi there. I'm Steven.
+  (This is the template of the blurb. You can change it in the _config.yml file.)Hi there. I'm Steven-Zhl.
 baseurl: "" # 根目录，默认留空即可，但如果你的网站没有部署在根目录，则需要手动修改。/Root directory, leave it blank by default, but if your website is not deployed in the root directory, you need to modify it manually.
 username: Your name # 你的博客署名。/Your blog author.
 markdown: kramdown # Markdown解析器/Markdown parser
@@ -75,9 +75,9 @@ simple-jekyll-search: # Simple Jekyll Search(搜索功能)
   enable: true # 是否启用搜索/Whether to enable search
   results_limit: 10 # 搜索结果的显示上限/Display limit of search results
 mathjax: # MathJax(数学公式)
-  enable: true # 是否允许渲染数学公式/Whether to enable render formula
+  enable: true # 是否默认开启渲染数学公式(全局配置)/Whether to enable rendering mathematical formulas by default (global configuration)
 jekyll-mermaid: # Jekyll Mermaid(绘图功能)
-  enable: true # 是否启用绘图功能/Whether to enable drawing function
+  enable: false # 是否默认启用绘图功能(全局配置)/Whether to enable drawing function by default (global configuration)
 feed:
   posts_limit: 10 # RSS订阅的文章数量上限/Number of articles for RSS subscription
   tags:
