@@ -1,0 +1,11 @@
+{% if site.comment.enable and page.title %}
+{% if site.comment.provider == "gitalk" %}
+<!-- Gitalk -->
+<link href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+{% elsif site.comment.provider == "disqus" %}
+<!-- Disqus -->
+{% elsif site.comment.provider == "livere" %}
+<!-- Livere -->
+{% endif %}
+{% endif %}

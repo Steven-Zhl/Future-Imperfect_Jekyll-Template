@@ -5,17 +5,19 @@
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
     <link rel="icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
+    <!--Meta Description-->
+    {% if page.description %}
+    <meta name="description" content="{{ page.title }}:{{ page.description }}. {{ site.title }}">
+    {% else %}
+    <meta name="description" content="{{ site.title }}">
+    {% endif %}
 
     {% if site.feed %}
     <!-- RSS -->
     {% feed_meta %}
     {% endif %}
 
-    {% if site.gitalk.enable and page.title %}
-    <!-- Gitalk -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script async src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    {% endif %}
+    {% include _comment-head.html %}
 
     {% if page.mathjax == true %}
     {% include mathjax.html %}

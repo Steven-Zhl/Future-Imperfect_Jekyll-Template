@@ -67,8 +67,9 @@
   * [x] Rendered mermaid charts (based on jekyll-mermaid)
   * [x] Customizable header
 * Comments
-  * [x] Gitalk comments
-  * [ ] Disqus comments
+  * [x] [Gitalk](https://github.com/gitalk/gitalk) comments
+  * [x] [Disqus](https://disqus.com/) comments
+  * [x] [Livere](https://livere.com/) comments
 
 ## Usage
 

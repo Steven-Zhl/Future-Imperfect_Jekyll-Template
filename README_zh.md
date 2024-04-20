@@ -64,8 +64,9 @@
   * [x] 渲染mermaid图表(基于[jekyll-mermaid](https://github.com/jasonbellamy/jekyll-mermaid))
   * [x] 可定制的header
 * 评论
-  * [x] Gitalk评论
-  * [ ] Disqus评论
+  * [x] [Gitalk](https://github.com/gitalk/gitalk)评论
+  * [x] [Disqus](https://disqus.com/)评论
+  * [x] [Livere](https://livere.com/)评论
 
 ## 使用
 
