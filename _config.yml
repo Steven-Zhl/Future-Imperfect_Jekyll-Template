@@ -28,6 +28,7 @@ weibo_account: # 微博账号(微博账号，不是微博id)/Weibo account(A Chi
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-seo-tag
 exclude: # Jekyll构建时应该被排除的文件/Files that should be excluded when Jekyll is built
   - .sass-cache/
   - .jekyll-cache/
