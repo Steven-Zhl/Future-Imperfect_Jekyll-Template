@@ -2,6 +2,8 @@
 
 > A Jekyll template based on [Future Imperfect](https://html5up.net/future-imperfect).
 >
+> *Due to Jekyll's limitations and inactivity, the project has been deprecated and the next instance will be developed based on VitePress*
+> 
 > I really like its style, but the Jekyll templates for it on GitHub aren't practical enough, so I made this repo.
 
 [![中文文档](https://img.shields.io/badge/README__zh-中文文档-blue)](./README_zh.md)
